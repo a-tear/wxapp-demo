@@ -1,0 +1,51 @@
+<import src="../../wxParse/wxParse.wxml" />
+<view class="detail">
+    <view class="swiper" wx:if="{{!goodsDetail.basicInfo.videoId}}">
+        <swiper class="swiper-box" indicator-dots="true" indicator-active-color="#fff" autoplay="true" circular="true">
+            <swiper-item wx:for="{{goodsDetail.pics}}" wx:key="id">
+                <image src="{{item.pic}}" mode="aspectFill" lazy-load="true"></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="swiper" wx:if="{{goodsDetail.basicInfo.videoId}}" style="height:450rpx">
+        <video src="{{videoMp4Src}}" autoplay="true" loop="true" style='width:100%;height:450rpx'></video>
+    </view>
+    <view class="goodsInfo">
+        <view class="goods-name">{{goodsDetail.basicInfo.name}}</view>
+        <view class="prices">
+            <view class="price">¥{{goodsDetail.basicInfo.minPrice}}</view>
+            <view class="num">{{goodsDetail.basicInfo.numberOrders}}人购买</view>
+            <view class="share">
+                <image class="share1" src="/images/share/share1.png" mode="aspectFill"></image>
+                <image class="share2" src="/images/share/share2.png" mode="aspectFill"></image>
+            </view>
+        </view>
+    </view>
+    <!-- <view class="kanjia">
+        <view class="title"></view>
+        <view class="kanjiaInfo">
+            <view class="item">
+                <view>限量</view>
+                <view>231231231份</view>
+            </view>
+        </view>
+    </view> -->
+    <view class="introduction">
+        <view class="title">商品介绍</view>
+        <view class="goods-text">
+            <template is="wxParse" data="{{wxParseData:article.nodes}}" />
+        </view>
+    </view>
+    <view class="footer">
+        <view class="customer-service">
+            <image class="" src="/images/kefu.png" mode="aspectFill"></image>
+            <view>客服</view>
+        </view>
+        <view class="shop-cart">
+            <image class="" src="/images/cart.png" mode="aspectFill"></image>
+            <view>购物车</view>
+        </view>
+        <view class="go-shop-cart">加入购物车</view>
+        <view class="now-buy">立即购买</view>
+    </view>
+</view>

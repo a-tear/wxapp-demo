@@ -1,0 +1,13 @@
+<view class="order-list">
+    <view class="content">
+        <view class="header" wx:if="{{!hasRefund}}">
+            <view bind:tap="changeStatus" class="status-item {{index==currentType?'active':''}}" wx:for="{{status}}" wx::key="{{index}}" data-index="{{index}}">
+                {{item}}
+            </view>
+        </view>
+        <view class="no-order">
+            <image src="/images/no-order.png" class="no-order-img"></image>
+            <view class="text">暂无订单</view>
+        </view>
+    </view>
+</view>

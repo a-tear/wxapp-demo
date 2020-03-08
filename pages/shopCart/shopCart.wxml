@@ -1,0 +1,10 @@
+<!-- pages/shopCart/shopCart.wxml -->
+<view class="shopCart">
+    <view class="tips">
+        <view class="icon">
+            <image src="/images/icon-cart.png" mode="aspectFill"></image>
+        </view>
+        <view class="text">购物车空开如也～</view>
+        <button class="default" size="default" bind:tap="goHome">去逛逛</button>
+    </view>
+</view>

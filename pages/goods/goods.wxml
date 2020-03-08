@@ -1,0 +1,38 @@
+<view class="goods-inner">
+    <view class="header">
+        <view class="search">
+            <input value="" type="text" value="{{name}}" placeholder="请输入搜索关键词" bindinput="bindinput" bindconfirm="bindconfirm"></input>
+            <image src="/images/icon/search.svg" mode="aspectFill"></image>
+        </view>
+        <view class="change">
+            <image src="/images/icon/list1.svg" mode="aspectFill"></image>
+        </view>
+    </view>
+    <view class="content">
+        <view class="screen">
+            <view class="info {{orderBy==''?'active':''}}" data-val="" bind:tap="screen">
+                <text>综合</text>
+            </view>
+            <view class="info {{orderBy=='addedDown'?'active':''}}" data-val="addedDown" bind:tap="screen">
+                <text>新品</text>
+            </view>
+            <view class="info {{orderBy=='ordersDown'?'active':''}}" data-val="ordersDown" bind:tap="screen">
+                <text>销量</text>
+            </view>
+            <view class="info {{orderBy=='priceUp'?'active':''}}" data-val="priceUp" bind:tap="screen">
+                <text>价格</text>
+            </view>
+        </view>
+        <view class="goods" wx:for="{{goodsList}}" wx:key="id" bind:tap="goGoodsDetail" data-id="{{item.id}}">
+            <view class="goodImg">
+                <image src="{{item.pic}}" mode="aspectFill"></image>
+            </view>
+            <view class="goodInfo">
+                <view class="goodName">{{item.name}}</view>
+                <view class="goodPrice">¥{{item.originalPrice}}</view>
+                <view class="num">{{item.numberSells}}人购买</view>
+            </view>
+        </view>
+        <view wx:if="{{goodsList.length==0}}" class="">已售罄</view>
+    </view>
+</view>

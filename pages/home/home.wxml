@@ -1,0 +1,97 @@
+<view class="home">
+    <view class="banner">
+        <swiper indicator-dots="{{bannerList.length}}" indicator-active-color='#fff' autoplay="{{true}}">
+            <swiper-item wx:for="{{bannerList}}" wx:key="id">
+                <image src="{{item.picUrl}}" mode='aspectFill'></image>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="tips">
+        <view class="icon">
+            <image src="../../images/notice.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+        </view>
+        <swiper autoplay="{{true}}" vertical='{{true}}'>
+            <swiper-item wx:for="{{tipList}}" wx:key="id">
+                <text>{{item.title}}</text>
+            </swiper-item>
+        </swiper>
+        <view class="more">
+            <text>更多</text>
+            <image src="../../images/arrow-right.png" mode="aspectFit|aspectFill|widthFix" lazy-load="false" binderror="" bindload=""></image>
+        </view>
+    </view>
+    <view class="icons">
+        <view class="icon-item" wx:for="{{iconsList}}" wx:key="id" bindtap="goGoods" id="{{item.id}}">
+            <image src="{{item.icon}}" mode="aspectFill"></image>
+            <text>{{item.name}}</text>
+        </view>
+    </view>
+    <view class="content">
+        <view class="title">
+            <text>爆品推荐</text>
+        </view>
+        <view class="goods">
+            <view class="item" wx:for="{{recommend}}" wx:key="id" bind:tap="goGoodsDetail" data-id="{{item.id}}">
+                <image src="{{item.pic}}" mode="aspectFill"></image>
+                <view class="good-name">{{item.name}}</view>
+                <view class="price">
+                    <text class="nowPrice">¥{{item.minPrice}}</text>
+                    <text class="oldPrice">¥{{item.originalPrice}}</text>
+                </view>
+            </view>
+        </view>
+        <view class="bargain">
+            <view class="tip">疯狂砍价</view>
+            <view class="info" wx:for="{{bargainList}}" wx:key="id" bind:tap="goGoodsDetail" data-id="{{item.id}}">
+                <view class="img">
+                    <image src="{{item.pic}}" mode="aspectFill"></image>
+                </view>
+                <view class="goodInfo">
+                    <view class="goodName">{{item.name}}</view>
+                    <view class="characteristic">{{item.characteristic}}</view>
+                    <view class="price">
+                        <view class="old-price">原价:{{item.originalPrice}}</view>
+                        <view class="now-price">底价:{{item.kanjiaPrice}}</view>
+                        <view class="btn" bind:tap="goGoodsDetail" data-id="{{item.id}}">砍价</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="groupBuy">
+            <view class="title">
+                <text>全民拼团</text>
+            </view>
+            <view class="groupBuy-info" wx:for="{{groupList}}" wx:key="id" bind:tap="goGoodsDetail" data-id="{{item.id}}">
+                <view class="info-item">
+                    <view class="img">
+                        <image src="{{item.pic}}" mode="aspectFill"></image>
+                    </view>
+                    <view class="img-name">{{item.name}}</view>
+                    <view class="img-characteristic">{{item.characteristic}}</view>
+                    <view class="price">
+                        <view class="old-price">¥{{item.pingtuanPrice}}</view>
+                        <view class="now-price">¥{{item.originalPrice}}</view>
+                    </view>
+                    <view class="btn">
+                        <text bind:tap="goGoodsDetail" data-id="{{item.id}}">拼团</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class="commodity">
+            <view class="title">
+                <text>商品列表</text>
+            </view>
+            <view class="goods">
+                <view class="item" wx:for="{{goodsList}}" wx:key="id" bind:tap="goGoodsDetail" data-id="{{item.id}}">
+                    <image src="{{item.pic}}" mode="aspectFill"></image>
+                    <view class="good-name">{{item.name}}</view>
+                    <view class="price">
+                        <text class="nowPrice">¥{{item.minPrice}}</text>
+                        <text class="oldPrice">¥{{item.originalPrice}}</text>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,35 @@
+<view class="classification">
+    <view class="header">
+        <view class="search">
+            <input value="" type="text" value="{{name}}" placeholder="请输入搜索关键词" bindinput="bindinput" bindconfirm="bindconfirm"></input>
+            <image src="/images/icon/search.svg" mode="aspectFill"></image>
+        </view>
+    </view>
+    <view class="content">
+        <scroll-view class="sider" scroll-y="true" scroll-with-animation="true" scroll-top='{{scrolltop}}'>
+            <view class="goods-class {{categorySelected.id==item.id?'active':''}}" data-id="{{item.id}}" wx:for="{{goodsCategory}}" wx:key="id" bind:tap="showGoods">
+                <text class="name {{categorySelected.id==item.id?'active':''}}">{{item.name}}</text>
+            </view>
+        </scroll-view>
+        <scroll-view class="goods" scroll-y="true" scroll-top="{{scrolltop}}" wx:if="{{onLoadStatus}}" scroll-anchoring='true'>
+            <view wx:if="{{!goodsList}}" class="no-data">
+                <view class="line"></view>
+                <view class="txt">暂无商品</view>
+                <view class="line"></view>
+            </view>
+            <view class="goods-info" wx:for="{{goodsList}}" wx:key="id" bind:tap="goGoodsDetail" data-id="{{item.id}}">
+                <view class="goods-img">
+                    <image src="{{item.pic}}" mode="aspectFill"></image>
+                </view>
+                <view class="goods-text">
+                    <view class="goods-name">{{item.name}}</view>
+                    <view class="goods-price">¥{{item.minPrice}}</view>
+                    <view class="foot">
+                        <view class="shopped">已售{{item.numberOrders}}件</view>
+                        <view class="score">评价{{item.gotScore}}分</view>
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

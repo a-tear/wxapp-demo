@@ -1,0 +1,142 @@
+<view class="my">
+    <view class="header">
+        <view class="userInfo">
+            <image wx:if="{{!hasUserInfo && canIUse}}" class="userinfo-avatar" src="/images/nologin.png" mode="cover"></image>
+            <button wx:if="{{!hasUserInfo && canIUse}}" size="mini" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+                点击登录账户
+            </button>
+            <block wx:else>
+                <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+                <view class="userinfo-nickname">{{userInfo.nickName}}</view>
+            </block>
+        </view>
+    </view>
+    <view class="walletInfo">
+        <view class="item balance">
+            <view>0</view>
+            <view>余额</view>
+        </view>
+        <view class="item freeze">
+            <view>0</view>
+            <view>冻结</view>
+        </view>
+        <view class="item integral">
+            <view>0</view>
+            <view>积分</view>
+        </view>
+    </view>
+    <view class="myOrder">
+        <navigator url="/pages/order-list/order-list" class="title">
+            <view class="text">我的订单</view>
+            <view class="right">
+                <image src="/images/icon/next.png" mode="aspectFill"></image>
+            </view>
+        </navigator >
+        <view class="orderInfo">
+            <view class="item" bind:tap="goOrder" data-type="0">
+                <view class="icon">
+                    <image src="/images/order/topay.png" mode="aspectFill"></image>
+                </view>
+                <view class="text">待付款</view>
+            </view>
+            <view class="item" bind:tap="goOrder" data-type="1">
+                <view class="icon">
+                    <image src="/images/order/fahuo.png" mode="aspectFill"></image>
+                </view>
+                <view class="text">待发货</view>
+            </view>
+            <view class="item" bind:tap="goOrder" data-type="2">
+                <view class="icon">
+                    <image src="/images/order/shouhuo.png" mode="aspectFill"></image>
+                </view>
+                <view class="text">待收货</view>
+            </view>
+            <view class="item" bind:tap="goOrder" data-type="3">
+                <view class="icon">
+                    <image src="/images/order/pj.png" mode="aspectFill"></image>
+                </view>
+                <view class="text">待评价</view>
+            </view>
+            <view class="item" bind:tap="goOrder" data-type="99">
+                <view class="icon">
+                    <image src="/images/order/shouhou.png" mode="aspectFill"></image>
+                </view>
+                <view class="text">退款/售后</view>
+            </view>
+        </view>
+    </view>
+    <view class="content">
+        <view class="item">
+            <view class=" active">
+                <view class="text">申请开票</view>
+                <view class="right">
+                    <image src="/images/icon/next.png" mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class=" active">
+                <view class="text">开票记录</view>
+                <view class="right">
+                    <image src="/images/icon/next.png" mode="aspectFill"></image>
+                </view>
+            </view>
+        </view>
+        <view class="item">
+            <view class=" active">
+                <view class="text">优惠买单</view>
+                <view class="right">
+                    <image src="/images/icon/next.png" mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class=" active">
+                <view class="text">资金明细</view>
+                <view class="right">
+                    <image src="/images/icon/next.png" mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class=" active">
+                <view class="text">每日签到</view>
+                <view class="right">
+                    <image src="/images/icon/next.png" mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class=" active">
+                <view class="text">积分兑换</view>
+                <view class="right">
+                    <image src="/images/icon/next.png" mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class="active">
+                <view class="text">收货地址</view>
+                <view class="right">
+                    <image src="/images/icon/next.png" mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class=" active">
+                <view class="text">领券中心</view>
+                <view class="right">
+                    <image src="/images/icon/next.png" mode="aspectFill"></image>
+                </view>
+            </view>
+        </view>
+        <view class="item">
+            <view class=" active">
+                <view class="text">关于我们</view>
+                <view class="right">
+                    <image src="/images/icon/next.png" mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class=" active">
+                <view class="text">绑定手机</view>
+                <view class="right">
+                    <image src="/images/icon/next.png" mode="aspectFill"></image>
+                </view>
+            </view>
+            <view class=" active">
+                <view class="text">授权登录</view>
+                <view class="right">
+                    <image src="/images/icon/next.png" mode="aspectFill"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

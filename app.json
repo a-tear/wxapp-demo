@@ -1,0 +1,52 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/classification/classification",
+    "pages/shopCart/shopCart",
+    "pages/my/my",
+    "pages/goods/goods",
+    "pages/goods-detail/goods-detail",
+    "pages/order-list/order-list"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "天使童装",
+    "navigationBarTextStyle": "black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#e64340",
+    "backgroundColor": "#fff",
+    "position": "bottom",
+    "borderStyle": "white",
+    "list": [{
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "/images/nav/home-off.png",
+        "selectedIconPath": "/images/nav/home-on.png"
+      },
+      {
+        "pagePath": "pages/classification/classification",
+        "text": "分类",
+        "iconPath": "/images/nav/ic_catefory_normal.png",
+        "selectedIconPath": "/images/nav/ic_catefory_pressed.png"
+      },
+      {
+        "pagePath": "pages/shopCart/shopCart",
+        "text": "购物车",
+        "iconPath": "/images/nav/cart-off.png",
+        "selectedIconPath": "/images/nav/cart-on.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "/images/nav/my-off.png",
+        "selectedIconPath": "/images/nav/my-on.png"
+      }
+    ]
+  }
+
+}
